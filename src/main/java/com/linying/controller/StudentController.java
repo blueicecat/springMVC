@@ -4,8 +4,10 @@ import com.linying.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by linying on 2017/3/27
@@ -17,12 +19,12 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    //@ResponseBody//(之前我因为加了这个注解，导致页面访问一直是406错误，注释了就好啦，具体为啥我暂时还不知道)
-    @RequestMapping(value = "/getAllStudent", method = RequestMethod.GET)
-    public ModelAndView getAllStudent() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("studentDisplay");
-        mav.addObject("students", studentService.getAllStudent());
-        return mav;
+    @RequestMapping("/getuser")
+    @ResponseBody
+    public Map<String, Object> getUser(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("state", "success");
+        map.put("data", studentService.getUser());
+        return map;
     }
 }
