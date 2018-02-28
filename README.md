@@ -1,6 +1,6 @@
 # springMVC
 The Demo of springMVC
 
-v1.0.0 		springMVC  
-v1.1.0 		add spring data jpa  
-	v1.1.1 	optimize
+v1.0.0    springMVC  
+v1.1.0    add spring data jpa  
+v1.1.1  optimize structure  
