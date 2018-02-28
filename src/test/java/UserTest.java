@@ -18,7 +18,7 @@ public class UserTest {
     @Test
     public void getAllStudentTest() {
         User user = new User();
-        user.setName("wanger");
+        user.setName("王志峰");
         user  = userDao.save(user);
         System.out.println(user.getId().toString());
     }
